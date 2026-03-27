@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kappo Business | Dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="login-screen" class="screen">
+        <div class="login-container">
+            <h1>KAPPO BUSINESS</h1>
+            <p>Acesso Restrito</p>
+            <input type="text" id="login-user" placeholder="Usuário">
+            <input type="password" id="login-pass" placeholder="Senha">
+            <button onclick="Auth.handleLogin()">ENTRAR NO SISTEMA</button>
+        </div>
+    </div>
+
+    <div id="main-dashboard" class="screen hidden">
+        <aside class="sidebar">
+            <h2>KAPPO</h2>
+            <nav>
+                <button onclick="App.changeTab('home')">Início</button>
+                <button onclick="App.changeTab('clientes')">Clientes</button>
+                <button onclick="SessionManager.destroy()">Sair</button>
+            </nav>
+        </aside>
+        <main class="content">
+            <header>
+                <h1 id="page-title">Dashboard</h1>
+                <div id="user-info"></div>
+            </header>
+            <div id="app-view">
+                </div>
+        </main>
+    </div>
+
+    <script src="assets/js/db.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
